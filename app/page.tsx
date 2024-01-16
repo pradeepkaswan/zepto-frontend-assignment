@@ -25,9 +25,11 @@ export default function Home() {
   const handleKeyDown = (e: KeyboardEvent) => {
     if (e.key === "Backspace") {
       setPressCount((prevCount) => prevCount + 1);
-      console.log("Presscount", pressCount);
       if ((pressCount + 1) % 2 === 0) {
-        setSelectedUsers((prevUsers) => prevUsers.slice(0, -1));
+        if (lastSelectedIndex !== null) {
+          const lastSelectedUser = selectedUsers[lastSelectedIndex];
+          handleRemove(lastSelectedUser);
+        }
       } else {
         setLastSelectedIndex(selectedUsers.length - 1);
       }
