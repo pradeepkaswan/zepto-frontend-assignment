@@ -82,7 +82,7 @@ export default function Home() {
             <li
               key={user.id}
               className={`flex items-center bg-gray-300 rounded-full gap-4 ${
-                index === lastSelectedIndex ? "bg-gray-400" : "bg-gray-300"
+                index === lastSelectedIndex ? "outline outline-blue-600" : ""
               }`}
             >
               <Image
